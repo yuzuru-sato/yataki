@@ -1,0 +1,11 @@
+{
+  "name": "八滝ウッディランド",
+  "url": "https://yataki-woody-land.net",
+  "nav": [
+    { "label": "ホーム", "href": "/" },
+    { "label": "施設案内", "href": "/camp/" },
+    { "label": "バンガロー", "href": "/lodge/" },
+    { "label": "料金", "href": "/price/" },
+    { "label": "アクセス", "href": "/access/" }
+  ]
+}

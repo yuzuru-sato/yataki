@@ -1,0 +1,23 @@
+---
+layout: base.njk
+---
+<div id="primary" class="content-area col-md-9">
+	<main id="main" class="post-wrap" role="main">
+		<article class="post hentry">
+			<header class="entry-header">
+				<div class="meta-post">
+					<a href="/{{ categorySlug }}/" class="post-cat">{{ category }}</a>
+				</div>
+				<h1 class="title-post entry-title">{{ entryTitle }}</h1>
+				<div class="single-meta">
+					<span class="posted-on">{{ date | dateja }}</span>
+					<span class="byline"><span class="author">キャンプ場管理人</span></span>
+				</div>
+			</header><!-- .entry-header -->
+			<div class="entry-content">
+				{{ content | safe }}
+			</div><!-- .entry-content -->
+		</article>
+	</main><!-- #main -->
+</div><!-- #primary -->
+{% include "sidebar.njk" %}

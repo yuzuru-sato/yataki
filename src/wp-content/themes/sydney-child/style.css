@@ -1,0 +1,73 @@
+/*
+Template: sydney
+Theme Name: sydney-child
+*/
+
+.ft80 { font-size: 80%; }
+.ft90 { font-size: 90%; }
+.ft110 { font-size: 110%; }
+.ft120 { font-size: 120%; }
+
+.pd10 { padding: 10px; }
+.pdt20 { padding-top: 20px; }
+
+.mgt20 { margin-top: 20px; }
+.mgb20 { margin-bottom: 20px; }
+.mgt40 { margin-top: 40px; }
+.mgb40 { margin-bottom: 40px; }
+.mgt60 { margin-top: 60px; }
+.mgb60 { margin-bottom: 60px; }
+
+/* header title*/
+
+h1.header-title {
+	font-size: 12px;
+	color: #ffffff;
+	margin: 0 0 10px;
+	font-weight: normal;
+}
+
+
+/* 上書き */
+.hentry .title-post {
+  font-size: 26px;
+}
+
+/* カードデザイン */
+.card {
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+}
+.card-img {
+  border-radius: 5px 5px 0 0;
+  max-width: 100%;
+  height: auto;
+}
+.card-content {
+  padding: 20px;
+}
+.card-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+.card-text {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.card-link {
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding: 20px;
+}
+.card-link a {
+  text-decoration: none;
+  color: #ffffff;
+  margin: 0 10px;
+}
+.card-link:hover {
+  color: #333333;
+}

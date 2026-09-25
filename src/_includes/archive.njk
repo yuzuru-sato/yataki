@@ -1,0 +1,21 @@
+---
+layout: base.njk
+---
+<div id="primary" class="content-area col-md-9">
+	<main id="main" class="post-wrap" role="main">
+		<header class="page-header">
+			<h1 class="title-post">{{ entryTitle }}</h1>
+		</header>
+		{% for post in collections.camplog | byCategory(categorySlug) %}
+		<article class="hentry mgb20">
+			<header class="entry-header">
+				<h2 class="entry-title"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+				<div class="single-meta">
+					<span class="posted-on">{{ post.date | dateja }}</span>
+				</div>
+			</header>
+		</article>
+		{% endfor %}
+	</main><!-- #main -->
+</div><!-- #primary -->
+{% include "sidebar.njk" %}

@@ -1,0 +1,16 @@
+---
+layout: base.njk
+---
+<div id="primary" class="content-area col-md-9">
+	<main id="main" class="post-wrap" role="main">
+		<article class="page hentry">
+			<header class="entry-header">
+				<h1 class="title-post entry-title">{{ entryTitle }}</h1>
+			</header><!-- .entry-header -->
+			<div class="entry-content">
+				{{ content | safe }}
+			</div><!-- .entry-content -->
+		</article>
+	</main><!-- #main -->
+</div><!-- #primary -->
+{% include "sidebar.njk" %}

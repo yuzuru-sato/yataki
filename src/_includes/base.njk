@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}{% if title %} | {% endif %}{{ site.name }}</title>
+{% if description %}<meta name="description" content="{{ description }}">{% endif %}
+<meta property="og:locale" content="ja_JP">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ title }}">
+{% if description %}<meta property="og:description" content="{{ description }}">{% endif %}
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:site_name" content="{{ site.name }}">
+<link rel="icon" href="/wp-content/uploads/2020/04/cropped-yataki-32x32.png" sizes="32x32">
+<link rel="icon" href="/wp-content/uploads/2020/04/cropped-yataki-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/wp-content/uploads/2020/04/cropped-yataki-180x180.png">
+
+<link rel="stylesheet" href="/wp-content/plugins/wordpress-bootstrap-css/resources/bootstrap-3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="/wp-content/themes/sydney/css/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="/wp-includes/css/dist/block-library/style.min.css">
+<link rel="stylesheet" href="/wp-content/themes/sydney/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,600&subset=latin&display=swap">
+<link rel="stylesheet" href="/wp-content/themes/sydney-child/style.css">
+<link rel="stylesheet" href="/wp-content/plugins/tablepress/css/default.min.css">
+<style>
+body, #mainnav ul ul a { font-family:Raleway;}
+h1, h2, h3, h4, h5, h6, #mainnav ul li a { font-family:Raleway;}
+.site-title { font-size:32px; }
+#mainnav ul li a { font-size:14px; }
+h1 { font-size:28px; }
+h2 { font-size:24px; }
+h3 { font-size:22px; }
+body { font-size:15px; }
+.single .hentry .title-post { font-size:36px; }
+.header-image { background-size:cover; height:300px; }
+#mainnav ul li a:hover, #mainnav > ul > li > a.active, #mainnav > ul > li > a:hover, a, .hentry .meta-post a:hover, .content-area .post-cat { color:#0ba29a}
+.roll-button, .go-top, button, input[type="submit"] { background-color:#0ba29a}
+.site-header.float-header { background-color:rgba(11,162,154,0.9);}
+@media only screen and (max-width: 1024px) { .site-header { background-color:#0ba29a;}}
+.site-title a, .site-title a:hover { color:#ffffff}
+#mainnav ul li a, #mainnav ul li::before { color:#ffffff}
+#mainnav .sub-menu li a { color:#ffffff; background:#1c1c1c}
+.text-slider .maintitle, .text-slider .subtitle { color:#ffffff}
+body { color:#333333}
+.footer-widgets { background-color:#252525}
+.btn-menu .sydney-svg-icon { fill:#ffffff}
+#mainnav ul li a:hover { color:#d65050}
+.site-footer { background-color:#0ba29a}
+.site-footer,.site-footer a { color:#ffffff}
+.overlay { background-color:#000000}
+.page-wrap { padding-top:83px; padding-bottom:100px;}
+.entry-content h2 { padding-top:25px; padding-bottom:10px; border-bottom:1px solid #0BA29A; }
+@media only screen and (max-width: 1025px) {
+  .mobile-slide { display: block; }
+  .slide-item { background-image: none !important; height: auto !important; }
+  .slide-inner { min-height: initial; }
+}
+</style>
+</head>
+<body class="{{ bodyClass | default('page') }} custom-background">
+
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content">コンテンツへスキップ</a>
+
+	<header id="masthead" class="site-header" role="banner">
+		<div class="header-wrap">
+			<div class="container">
+				<h1 class="header-title">{{ headerTitle }}</h1>
+				<div class="row">
+					<div class="col-md-4 col-sm-8 col-xs-12">
+						<a href="/" title="{{ site.name }}"><img class="site-logo" src="/wp-content/uploads/2017/01/logo-white.png" alt="{{ site.name }}"></a>
+					</div>
+					<div class="col-md-8 col-sm-4 col-xs-12">
+						<div class="btn-menu"></div>
+						<nav id="mainnav" class="mainnav" role="navigation">
+							<div class="menu-top-container">
+								<ul id="menu-top" class="menu">
+								{% for item in site.nav %}
+									<li class="menu-item{% if page.url == item.href %} current-menu-item current_page_item{% endif %}">
+										<a href="{{ item.href }}"{% if page.url == item.href %} aria-current="page"{% endif %}>{{ item.label }}</a>
+									</li>
+								{% endfor %}
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header><!-- #masthead -->
+
+	<div class="sydney-hero-area">
+	{% if hero == "slider" %}
+		<div id="slideshow" class="header-slider" data-speed="5000" data-mobileslider="responsive">
+			<div class="slides-container">
+			{% for slide in slides %}
+				<div class="slide-item slide-item-{{ loop.index }}" style="background-image:url('{{ slide.image }}');">
+					<img class="mobile-slide preserve" src="{{ slide.image }}" alt="{{ slide.alt }}">
+					<div class="slide-inner">
+						<div class="contain animated fadeInRightBig text-slider">
+							<h2 class="maintitle">{{ slide.title }}</h2>
+							<p class="subtitle">{{ slide.subtitle }}</p>
+						</div>
+						<a href="#contact" class="roll-button button-slider">予約・問合せはこちら</a>
+					</div>
+				</div>
+			{% endfor %}
+			</div>
+		</div>
+	{% endif %}
+		<div class="header-image">
+			<div class="overlay"></div>
+			<img class="header-inner" src="/wp-content/uploads/2017/01/cropped-gifu-camp-07.jpg" width="1920" alt="{{ site.name }}">
+		</div>
+	</div>
+
+	<div id="content" class="page-wrap">
+		<div class="container content-wrapper">
+			<div class="row">
+				{{ content | safe }}
+			</div>
+		</div>
+	</div><!-- #content -->
+
+	<a class="go-top"><i class="fa fa-angle-up"></i></a>
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info container">
+			<a href="/">岐阜県関市のキャンプ場「八滝ウッディランド」</a>
+		</div>
+	</footer><!-- #colophon -->
+
+</div><!-- #page -->
+
+<script src="/wp-includes/js/jquery/jquery.min.js"></script>
+<script src="/wp-includes/js/jquery/jquery-migrate.min.js"></script>
+<script src="/wp-content/plugins/wordpress-bootstrap-css/resources/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script src="/wp-content/themes/sydney/js/scripts.js"></script>
+<script src="/wp-content/themes/sydney/js/main.js"></script>
+</body>
+</html>
