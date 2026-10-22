@@ -1,4 +1,10 @@
+import { HtmlBasePlugin } from "@11ty/eleventy";
+
+const pathPrefix = "/" + (process.env.PATH_PREFIX || "").replace(/^\/+|\/+$/g, "");
+
 export default function (eleventyConfig) {
+  eleventyConfig.addPlugin(HtmlBasePlugin);
+
   eleventyConfig.addPassthroughCopy("src/wp-content");
   eleventyConfig.addPassthroughCopy("src/wp-includes");
   eleventyConfig.addPassthroughCopy("src/CNAME");
@@ -19,6 +25,7 @@ export default function (eleventyConfig) {
   });
 
   return {
+    pathPrefix: pathPrefix === "/" ? "/" : pathPrefix + "/",
     dir: {
       input: "src",
       output: "_site",

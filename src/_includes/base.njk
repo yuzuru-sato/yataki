@@ -56,13 +56,13 @@ body { color:#333333}
   .slide-inner { min-height: initial; }
 }
 {% if hero != "slider" %}
-.header-image { background-image: url(/wp-content/uploads/2017/01/cropped-gifu-camp-07.jpg); display: block; }
+.header-image { background-image: url({{ '/wp-content/uploads/2017/01/cropped-gifu-camp-07.jpg' | url }}); display: block; }
 @media only screen and (max-width: 1024px) {
   .header-inner { display: block; }
   .header-image { background-image: none; height: auto !important; }
 }
 {% endif %}
-body.custom-background { background-image: url("/wp-content/uploads/2017/01/bg.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; }
+body.custom-background { background-image: url("{{ '/wp-content/uploads/2017/01/bg.png' | url }}"); background-position: center center; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; }
 </style>
 </head>
 <body class="{{ bodyClass | default('page') }} custom-background menu-inline">
@@ -102,7 +102,7 @@ body.custom-background { background-image: url("/wp-content/uploads/2017/01/bg.p
 		<div id="slideshow" class="header-slider" data-speed="5000" data-mobileslider="responsive">
 			<div class="slides-container">
 			{% for slide in slides %}
-				<div class="slide-item slide-item-{{ loop.index }}" style="background-image:url('{{ slide.image }}');">
+				<div class="slide-item slide-item-{{ loop.index }}" style="background-image:url('{{ slide.image | url }}');">
 					<img class="mobile-slide preserve" src="{{ slide.image }}" alt="{{ slide.alt }}">
 					<div class="slide-inner">
 						<div class="contain animated fadeInRightBig text-slider">

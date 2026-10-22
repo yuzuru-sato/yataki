@@ -23,8 +23,12 @@ jobs:
         with:
           node-version: 20
           cache: npm
+      - id: pages
+        uses: actions/configure-pages@v5
       - run: npm ci
       - run: npx @11ty/eleventy
+        env:
+          PATH_PREFIX: ${{ steps.pages.outputs.base_path }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
