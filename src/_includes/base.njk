@@ -55,9 +55,17 @@ body { color:#333333}
   .slide-item { background-image: none !important; height: auto !important; }
   .slide-inner { min-height: initial; }
 }
+{% if hero != "slider" %}
+.header-image { background-image: url(/wp-content/uploads/2017/01/cropped-gifu-camp-07.jpg); display: block; }
+@media only screen and (max-width: 1024px) {
+  .header-inner { display: block; }
+  .header-image { background-image: none; height: auto !important; }
+}
+{% endif %}
+body.custom-background { background-image: url("/wp-content/uploads/2017/01/bg.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; }
 </style>
 </head>
-<body class="{{ bodyClass | default('page') }} custom-background">
+<body class="{{ bodyClass | default('page') }} custom-background menu-inline">
 
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content">コンテンツへスキップ</a>
