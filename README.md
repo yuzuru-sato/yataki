@@ -9,7 +9,11 @@ WordPress（Sydney テーマ）で運用していたサイトを [Eleventy](http
   - `src/*.njk` — 固定ページ（施設案内・料金・アクセスなど）
   - `src/blog/`, `src/news/`, `src/facilities/` — お知らせ・ブログ・施設紹介の記事（各ディレクトリに `.njk` ファイルを追加すると自動的にページが増えます）
   - `src/_includes/` — 共通レイアウト（`base.njk` 全体の枠、`page.njk` 固定ページ、`post.njk` 記事、`sidebar.njk` サイドバーの最新記事一覧）
-  - `src/wp-content/`, `src/wp-includes/` — 元サイトの CSS・JS・画像資産（そのまま流用し見た目を維持）
+  - `src/css/`, `src/js/` — スタイルシートとスクリプト（元サイトのテーマ資産を流用し見た目を維持）
+  - `src/images/` — 画像
+    - `site/` ロゴ・背景・ヘッダーのバナー・ファビコン
+    - `top/` トップページのカード・スライド用の写真（`slider/` がスライド）
+    - `photos/` 記事・ページ本文で使う写真（`common/` は旧テーマ由来）
 - `.eleventy.js` — Eleventy の設定
 - `.github/workflows/deploy.yml` — GitHub Pages への自動デプロイ
 

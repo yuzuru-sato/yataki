@@ -5,8 +5,9 @@ const pathPrefix = "/" + (process.env.PATH_PREFIX || "").replace(/^\/+|\/+$/g, "
 export default function (eleventyConfig) {
   eleventyConfig.addPlugin(HtmlBasePlugin);
 
-  eleventyConfig.addPassthroughCopy("src/wp-content");
-  eleventyConfig.addPassthroughCopy("src/wp-includes");
+  eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("src/js");
+  eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/CNAME");
 
   eleventyConfig.addFilter("limit", (arr, n) => arr.slice(0, n));
