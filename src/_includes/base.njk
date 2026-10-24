@@ -15,10 +15,13 @@
 <link rel="icon" href="/images/site/favicon-192x192.png" sizes="192x192">
 <link rel="apple-touch-icon" href="/images/site/favicon-180x180.png">
 
+{% if hero == "slider" %}<link rel="preload" as="image" href="{{ slides[0].image | url }}" fetchpriority="high">{% endif %}
 <link rel="stylesheet" href="/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/bootstrap-sydney.min.css">
 <link rel="stylesheet" href="/css/block-library.min.css">
 <link rel="stylesheet" href="/css/sydney.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,600&subset=latin&display=swap">
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/tablepress.min.css">
@@ -94,8 +97,9 @@ body { color:#333333}
   .header-image { background-image: none; height: auto !important; }
 }
 {% endif %}
-body.custom-background { background-image: url("{{ '/images/site/background.png' | url }}"); background-position: center center; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; }
+body.custom-background { background-image: url("{{ '/images/site/background.jpg' | url }}"); background-position: center center; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; }
 </style>
+<link rel="stylesheet" href="/css/custom.css">
 </head>
 <body class="{{ bodyClass | default('page') }} custom-background menu-inline">
 

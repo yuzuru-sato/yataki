@@ -1,0 +1,84 @@
+/* 元テーマ（sydney.css）への上書き。見た目の微調整はここに書く。 */
+
+/* --- 余白 --- */
+.page-wrap { padding-top: 48px; padding-bottom: 64px; }
+.entry-header { margin-bottom: 20px; }
+
+/* --- カード: 高さをそろえ、ボタンを下端に揃える --- */
+.row:has(> [class*="col-"] > .card) { display: flex; flex-wrap: wrap; }
+.row:has(> [class*="col-"] > .card)::before,
+.row:has(> [class*="col-"] > .card)::after { display: none; }
+.row:has(> [class*="col-"] > .card) > [class*="col-"] { display: flex; }
+.row:has(> [class*="col-"] > .card) > [class*="col-"] > .card { display: flex; flex-direction: column; width: 100%; }
+.card-img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.card-content { flex: 1; display: flex; flex-direction: column; }
+.card-text { flex: 1; }
+
+/* --- タブレット・スマホ --- */
+@media only screen and (max-width: 1024px) {
+  .page-wrap { padding-top: 20px; padding-bottom: 40px; }
+  .page .page-wrap .content-wrapper,
+  .single .page-wrap .content-wrapper,
+  .page-wrap .content-wrapper { padding: 20px 16px; }
+  .entry-content h2 { padding-top: 16px; }
+  .entry-content ul, .entry-content ol { padding-left: 24px; }
+
+  /* ヘッダーを細くして、スクロールしても上に残す */
+  .site-header,
+  .site-header.fixed {
+    position: sticky !important;
+    top: 0;
+    padding: 6px 0;
+  }
+  .site-header.float-header { padding: 6px 0; }
+  .header-wrap { text-align: left; }
+  h1.header-title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .header-wrap .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+  }
+  .header-wrap .row::before,
+  .header-wrap .row::after { display: none; }
+  .header-wrap .row > [class*="col-"] {
+    position: static;
+    float: none;
+    width: auto;
+    padding: 0;
+  }
+  .site-logo { max-height: 34px; width: auto; }
+  .btn-menu {
+    float: none;
+    width: 44px;
+    height: 44px;
+    margin: 0 -8px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-menu .sydney-svg-icon { width: 24px; height: 24px; }
+
+  /* メニューはヘッダー直下に横幅いっぱいで開く */
+  #mainnav-mobi {
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    max-height: calc(100vh - 56px);
+    overflow-y: auto;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  }
+  #mainnav-mobi ul > li > a { padding: 14px 20px; font-size: 15px; }
+}
+
+/* --- スライダー: 文字が入ってくるアニメーションを短くする --- */
+.text-slider { animation-duration: 0.6s; -webkit-animation-duration: 0.6s; }
